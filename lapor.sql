@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 04:34 AM
+-- Generation Time: Jul 27, 2023 at 08:05 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -42,12 +42,15 @@ CREATE TABLE `aspirasi` (
 --
 
 INSERT INTO `aspirasi` (`id`, `no_aspirasi`, `judul`, `isi`, `created_at`, `dokumen`, `id_user`) VALUES
-(1, 'ASP1686022641', 'de2d', 'd2ed', '2023-06-06 05:37:27', '', 25),
-(2, 'ASP1686022647', 'sw', 'xqd', '2023-06-06 05:38:10', 'images1.jpg', 25),
-(3, 'ASP1686137953', 'dewd', 'def', '2023-06-07 13:39:17', '', 25),
-(4, 'ASP1686159179', 'Laporan', 'getg', '2023-06-07 19:33:09', '', 24),
-(5, 'ASP1686159257', 'd ewrfx', 'xfrefr3f', '2023-06-07 19:34:29', 'IMG_9440_(1)1.jpg', 24),
-(6, 'ASP1686456949', 'xd3re', 'dx3r', '2023-06-11 06:15:57', '', 26);
+(10, 'ASP1688497394', 'Discord', 'Gimana kalau kita buat event live coding hadiah mobil untuk meramaikan discord', '2023-07-04 21:03:45', 'face11.jpg', 37),
+(11, 'ASP1688504180', 'Discord', 'Saya memiliki saran bagaimana kita membuat event bermain bersama mentor di discord agar dapat meramaikan discord', '2023-07-04 22:56:48', '', 37),
+(12, 'ASP1688641733', 'LMS', 'Bagaimana kalau misalnya tugas LMS dibuka tanpa harus menunggu penilaian mentor', '2023-07-06 13:09:37', '', 39),
+(13, 'ASP1688653117', 'Mentor Bermasalah', 'Ganti mentor', '2023-07-06 16:18:43', '', 37),
+(14, 'ASP1688653123', 'dew', 'dew', '2023-07-06 16:19:00', '', 37),
+(15, 'ASP1688653209', 'dew', 'dew', '2023-07-06 16:20:12', '', 37),
+(16, 'ASP1688653219', 'dw', 'dwedw', '2023-07-06 16:20:22', '', 37),
+(17, 'ASP1688653226', 'er', 'fer', '2023-07-06 16:20:31', '', 37),
+(18, 'ASP1688673224', 'dewd', 'd3e', '2023-07-06 21:53:51', 'cara1.png', 37);
 
 -- --------------------------------------------------------
 
@@ -65,8 +68,11 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `jenis`) VALUES
-(1, 'Content LMS'),
-(2, 'Mentor');
+(6, 'LMS'),
+(7, 'Mentor'),
+(9, 'Discord'),
+(10, 'MSIB '),
+(11, 'Akun LMS');
 
 -- --------------------------------------------------------
 
@@ -80,23 +86,25 @@ CREATE TABLE `konsumen` (
   `email` varchar(128) NOT NULL,
   `password` varchar(256) NOT NULL,
   `nohp` varchar(50) NOT NULL,
-  `lembaga` int(11) NOT NULL,
+  `lembaga` varchar(100) NOT NULL,
   `image` varchar(128) NOT NULL,
   `is_active` int(1) NOT NULL,
-  `date_created` int(11) NOT NULL
+  `date_created` int(11) NOT NULL,
+  `role` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `konsumen`
 --
 
-INSERT INTO `konsumen` (`id`, `nama`, `email`, `password`, `nohp`, `lembaga`, `image`, `is_active`, `date_created`) VALUES
-(24, 'Yasmin ', 'lx.yasmin28@gmail.com', '$2y$10$mJBiO.HCPWO2arO146ZybO4/n3mcpb0uMkPnMLZIWCDTRmrcQN1p2', '0987654320', 2, 'Bali.jpg', 1, 1681013988),
-(25, 'Yasmin Nadhifa', 'yasminnadhifaa@gmail.com', '$2y$10$M8J9juYy3siTxTNkaXMxpu5Gy8J1KF8lLrymRFyo2M1Naxgcu2W2C', '09876543', 1, '65483e902c0fe9f1219799477fd33cd1.jpg', 1, 1681014174),
-(26, 'Azwardi', 'jefzou01@gmail.com', '$2y$10$.drbryrBBeEBQ0J8a1HAkuk2ClegIBlETbkxZNMM6hdELVOSdbGtq', '98765432', 1, 'default.jpg', 1, 1682230200),
-(27, 'Azwardi', 'arktourose@gmail.com', '$2y$10$X6Mty7hQhZ1yyVpciVrZAOpgtVH3d9diRzy8JzwyD43VZgNXIuar2', '98765432', 1, 'default.jpg', 1, 1682230218),
-(29, 'Yasmin Nadhifa', 'yasmin20ti@mahasiswa.pcr.ac.id', '$2y$10$nGp4PBGo2zR.8LAeh5vxEOEuvABiu4GFnwjNDHYZq1bOtQn70DxG6', '09876543', 4, 'default.jpg', 1, 1686102300),
-(30, 'Test user', 'p4nkd1wcmyn0h@gmail.com', '$2y$10$YoiDuQpEQBfGiDHd02c5TOm0/Dw4oM05LyOMFgdmGCA0Y135QR4QS', '098765432', 20, 'default.jpg', 1, 1686537133);
+INSERT INTO `konsumen` (`id`, `nama`, `email`, `password`, `nohp`, `lembaga`, `image`, `is_active`, `date_created`, `role`) VALUES
+(37, 'Yasmin ', 'yasminnadhifaa@gmail.com', '$2y$10$arDNPiobFl2.ys0WBHUdfOyrdIqKcKE.HgMc3sACI.6BFs8iaR68u', '85374122490', 'SMKN 2 Pekanbaru', 'face20.jpg', 1, 1688497140, 'Siswa'),
+(38, 'Muhammad Fajar ', 'arktourose@gmail.com', '$2y$10$48yAQkIuHjdf5tjb1HjN5Op5/k9nUItP2ftUQKGUCK4nVsuiBCnyi', '85374122490', 'SMKN 2 Pekanbaru', 'default.jpg', 1, 1688503327, 'Siswa'),
+(39, 'Hiro', 'jefzou01@gmail.com', '$2y$10$9jecP9.l1q2rNBIA3Aa/4.ASVKab1rLZEai1rYMC5KH2uZzRGcoyS', '85374122490', 'SMKN 2 Pekanbaru', '65483e902c0fe9f1219799477fd33cd1.jpg', 1, 1688636385, 'Pendamping'),
+(40, 'Hiro', 'p4nkd1wcmyn0h@gmail.com', '$2y$10$gMvt9J7sM444GOTORne/8.Xn7AlnYmb/nQ8H6pCbuLlw71MDY/Vzy', '85374122490', 'SMKN 10 Pekanbaru', 'default.jpg', 1, 1688705074, 'Siswa'),
+(41, 'Yasmin Nadhifa', 'lx.yasmin28@gmail.com', '$2y$10$WbQZD6UZPPQ.QX59n2r6KOuVKZaWRvu9C40HAGY93blNqjzFl94je', '85374122490', 'SMKN 10 Pekanbaru', 'default.jpg', 1, 1688714202, 'Siswa'),
+(42, 'Yasmin', 'yasmin@gmail.com', '$2y$10$WUvT8HzyUJNyDucYM.Msv.CXdvReBW8bET30vGF.8qvb7Nj0lVLse', '85374122490', 'SMKN 10 Pekanbaru', 'default.jpg', 0, 1689271173, 'Guru'),
+(43, 'Yasmin N', 'yasmin20ti@pcr.ac.id', '$2y$10$RqDydWWXE8k2KQsbBF/kMesVQs31CTJ2xa6IV1DTA5k0e9/d.5n6u', '85274833590', 'SMKN 10 Pekanbaru', 'default.jpg', 0, 1689319718, 'Siswa');
 
 -- --------------------------------------------------------
 
@@ -123,29 +131,10 @@ CREATE TABLE `laporan` (
 --
 
 INSERT INTO `laporan` (`id`, `id_user`, `no_laporan`, `judul`, `tanggal`, `kategori`, `isi`, `status`, `pesan`, `created_at`, `dokumen`) VALUES
-(5, 24, 'LX1681014096', 'Laporan', '2023-04-09', 'Tim LX', 'hahahahahahahahahahahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 'Menunggu konfirmasi', '-', '', ''),
-(6, 24, 'LX1681014134', 'Laporan', '2023-04-07', 'Mentor', 'dewdx3dx3rdx3f4rfr4fr4f4f f4fx4xtft4fx \r\ndww\r\nd\r\nfder\r\nfer\r\nf', 'Menunggu konfirmasi', '-', '', ''),
-(7, 25, 'LX1681622566', 'It End With Us', '2023-04-11', 'Tim LX', 'table_pengaduan', 'Selesai', 'v eqr', '', ''),
-(8, 25, 'LX1682132838', 'ferferfer', '2023-04-11', 'Mentor', 'vrfgrw', 'Selesai', 'vrtgt', '2023-04-22 05:07:25', ''),
-(9, 25, 'LX1682260747', 'LMS 404 Not Responding', '2023-04-06', 'Mentor', 'LMS rusak sudah 2 minggu menampilkan pesan error \"404 Not Responding\"', 'Sedang dalam peninjauan', 'Maaf atas kelalaiannya, akan di cek kembali.', '2023-04-23 16:39:56', ''),
-(10, 25, 'LX1685787291', 'erfref', '2023-06-07', '1', 'freferf', 'Menunggu konfirmasi', '-', '2023-06-03 12:15:01', ''),
-(11, 25, 'LX1685787320', 'fr3ef', '2023-05-30', 'Content LMS', 'd3rf', 'Menunggu konfirmasi', '-', '2023-06-03 12:15:26', ''),
-(12, 25, 'LX1685976972', 'd3efd', '2023-06-07', 'Mentor', 'd3rf3r', 'Menunggu konfirmasi', '-', '2023-06-05 16:56:22', ''),
-(13, 25, 'LX1685977071', 'testt', '2023-06-06', 'Mentor', 'de3df', 'Menunggu konfirmasi', '-', '2023-06-05 16:58:05', ''),
-(14, 25, 'LX1685977240', 'dew', '2023-06-07', 'Mentor', 'wdefc', 'Menunggu konfirmasi', '-', '2023-06-05 17:00:50', ''),
-(15, 25, 'LX1685977394', 'cefc', '2023-06-09', 'Content LMS', 'cer', 'Menunggu konfirmasi', '-', '2023-06-05 17:03:21', ''),
-(16, 25, 'LX1685977675', 'cerc', '2023-06-16', 'Content LMS', 'cefc', 'Menunggu konfirmasi', '-', '2023-06-05 17:09:27', ''),
-(17, 25, 'LX1685977769', 'xdwx', '2023-06-10', 'Content LMS', 'xedx', 'Menunggu konfirmasi', '-', '2023-06-05 17:09:36', ''),
-(18, 25, 'LX1685978004', 'de2', '2023-06-14', 'Content LMS', 'de3d', 'Menunggu konfirmasi', '-', '2023-06-05 17:13:34', ''),
-(19, 25, 'LX1685978561', 'dewd', '2023-06-07', 'Content LMS', 'd3re', 'Menunggu konfirmasi', '-', '2023-06-05 17:23:01', ''),
-(20, 25, 'LX1685978597', 'bismillah', '2023-06-17', 'Content LMS', 'dwed', 'Menunggu konfirmasi', '-', '2023-06-05 17:23:31', ''),
-(21, 25, 'LX1685978659', 'cerc', '2023-06-08', 'Mentor', 'cefc', 'Menunggu konfirmasi', '-', '2023-06-05 17:24:27', ''),
-(22, 25, 'LX1685978705', 'frf', '2023-06-01', 'Content LMS', 'fre', 'Menunggu konfirmasi', '-', '2023-06-05 17:25:14', ''),
-(23, 25, 'LX1685978728', 'dwe', '2023-06-14', 'Mentor', 'dwerf', 'Menunggu konfirmasi', '-', '2023-06-05 17:28:03', ''),
-(24, 25, 'LX1685978884', 'd3re', '2023-06-08', 'Content LMS', 'fr3f', 'Menunggu konfirmasi', '-', '2023-06-05 17:28:13', ''),
-(25, 25, 'LX1685979495', 'fr3f', '2023-06-08', 'Content LMS', 'fr4f', 'Menunggu konfirmasi', '-', '2023-06-05 17:38:24', ''),
-(26, 25, 'LX1685980035', 'dref', '2023-06-01', 'Content LMS', 'fr4f', 'Menunggu konfirmasi', '-', '2023-06-05 17:47:23', '65483e902c0fe9f1219799477fd33cd13.jpg'),
-(28, 25, 'LX1686022376', 'cdwc', '2023-06-07', 'Content LMS', 'cwdc', 'Menunggu konfirmasi', '-', '2023-06-06 05:33:01', '');
+(38, 37, 'LX1688641568', 'ded', '2023-07-13', 'Mentor', 'ded', 'Selesai', 'Maaf yak', '2023-07-06 13:06:14', ''),
+(39, 39, 'LX1688641777', 'LMS', '2023-07-13', 'LMS', 'LMS saya tidak bisa login, saya lupa password', 'Menunggu konfirmasi', '-', '2023-07-06 13:10:05', ''),
+(46, 41, 'LX1688714260', 'Mentor bermasalah', '2023-07-07', 'LMS', 'Mentor gak pernah hadir live session', 'Selesai', 'Maaf sebelumnya akan diganti mentornya ', '2023-07-07 09:19:09', ''),
+(47, 37, 'LX1689271239', 'Mentor Bermasalah', '2023-07-14', 'Mentor', 'Mentor tidak datang', 'Selesai', 'Mohon maaf atas ketidaknyamanannya, mentor untuk SMKN 2 Pekanbaru sudah saya ganti. Terima kasih banyak. ', '2023-07-13 20:03:02', 'Screenshot_2023-07-13_2231011.png');
 
 -- --------------------------------------------------------
 
@@ -167,20 +156,19 @@ CREATE TABLE `lembaga` (
 --
 
 INSERT INTO `lembaga` (`id`, `nama`, `alamat`, `provinsi`, `nohp`, `status`) VALUES
-(1, 'Dummy School', 'LearningX', 'Riau', '098765432222', 'Active'),
-(2, 'Dummy School 2', 'LX', 'Jakarta', '98765432', 'Active'),
-(4, 'SMK Bhakti Insani', 'aaa', 'aaa', '98765432', 'Active'),
-(5, 'ss', 'ss', 'ss', '98765432', 'Not active'),
-(20, 'SMKN 1 Pekanbaru', 'Jl. Sudirman', 'Riau', '09876543', 'Active'),
-(21, 'SMKN 2 Pekanbaru', 'Jl. Sudirman 2', 'Riau 2', '09876543', 'Active');
+(31, 'SMKN 2 Pekanbaru', 'Jl. Sudirman 2', 'Riau 2', '09876545', 'Not active'),
+(33, 'SMKN 10 Pekanbaru', 'Jl. Sudirman', 'Riau', '09876543', 'Active'),
+(34, 'SMKN 3 Pekanbaru', 'Jl. Sudirman 2', 'Riau 2', '09876543', 'Not active'),
+(36, 'SMKN 1 Pekanbaru', 'Jl. Sudirman', 'Riau', '09876543', 'Active'),
+(37, 'SMKN 2 Pekanbaru', 'Jl. Sudirman 2', 'Riau 2', '09876543', 'Not active');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testi`
+-- Table structure for table `penilaian`
 --
 
-CREATE TABLE `testi` (
+CREATE TABLE `penilaian` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `pesan` varchar(225) NOT NULL,
@@ -189,16 +177,14 @@ CREATE TABLE `testi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `testi`
+-- Dumping data for table `penilaian`
 --
 
-INSERT INTO `testi` (`id`, `id_user`, `pesan`, `star`, `created_at`) VALUES
-(13, 25, 'fc3erf', 4, '2023-04-23 19:36:33'),
-(14, 25, '3rcvfr3vc', 4, '2023-04-23 19:36:37'),
-(15, 25, 'rf3fffffffffffffffffffff', 5, '2023-04-23 19:36:46'),
-(16, 25, 'ffffffffffffffffffff', 5, '2023-04-23 19:36:53'),
-(17, 25, 'fffffffffffffffffff', 1, '2023-04-23 19:36:59'),
-(19, 25, '', 0, '2023-06-06 03:51:58');
+INSERT INTO `penilaian` (`id`, `id_user`, `pesan`, `star`, `created_at`) VALUES
+(26, 37, 'Bagus', 4, '2023-07-04 21:07:48'),
+(27, 39, '', 4, '2023-07-06 13:10:26'),
+(28, 37, 'der', 4, '2023-07-06 16:20:26'),
+(29, 37, '', 5, '2023-07-06 21:55:31');
 
 -- --------------------------------------------------------
 
@@ -219,8 +205,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `password`, `image`) VALUES
-(13, 'admin', 'admin@gmail.com', '44588bb3d2bed677b0193164922f3e8dc6b4027f', 'face2.jpg'),
-(14, 'admin', 'admin1@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'default.jpg');
+(14, 'Tim LearningX', 'admin1@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', '96-x-80.png');
 
 -- --------------------------------------------------------
 
@@ -240,10 +225,10 @@ CREATE TABLE `user_token` (
 --
 
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
-(24, 'jefzou01@gmail.com', '4eOyEHUft8lk206/eHp0L/p3iN1DE0+n3PRqMRDLbS8=', 1682230200),
-(27, 'yasmin20ti@mahasiswa.pcr.ac.id', 'n3pV0sAaAt31ehUS5uGwZOJVPSaSglx9J5CieFtkl14=', 1686102300),
-(28, 'yasminnadhifaa@gmail.com', 's5GWV1yz9GRwLfjr8RMTHzRTzNP4b1NEPwaNpif+xzo=', 1686105287),
-(30, 'p4nkd1wcmyn0h@gmail.com', '3GH7HH6UqEUAZuZnH/mvpH/AIgq9EKbgi8pjrT6lpU0=', 1686537167);
+(39, 'arktourose@gmail.com', 'Cs+wkXCzA+0vLynJ+VL9sHa1su3nH4N835gS5ao3he0=', 1688503327),
+(40, 'yasminnadhifaa@gmail.com', 'vBXkq4cH3W6qA2qnrNoFMf/QlNXG2ODO/gm2DBTFeEY=', 1688503386),
+(44, 'yasmin@gmail.com', 'LDHS19N6LCw8C29Ko2qvXwNOdOVbAnZesCosbwch9pc=', 1689271173),
+(45, 'yasmin20ti@pcr.ac.id', '3goJ+IF2Rr9vxk/H4j8bqJiLohErn6SQgl0N087jrrI=', 1689319718);
 
 --
 -- Indexes for dumped tables
@@ -266,8 +251,7 @@ ALTER TABLE `category`
 -- Indexes for table `konsumen`
 --
 ALTER TABLE `konsumen`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_lembaga` (`lembaga`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `laporan`
@@ -283,9 +267,9 @@ ALTER TABLE `lembaga`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `testi`
+-- Indexes for table `penilaian`
 --
-ALTER TABLE `testi`
+ALTER TABLE `penilaian`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_id_user` (`id_user`);
 
@@ -309,37 +293,37 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `aspirasi`
 --
 ALTER TABLE `aspirasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `konsumen`
 --
 ALTER TABLE `konsumen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `lembaga`
 --
 ALTER TABLE `lembaga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `testi`
+-- AUTO_INCREMENT for table `penilaian`
 --
-ALTER TABLE `testi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+ALTER TABLE `penilaian`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -351,7 +335,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables
@@ -361,13 +345,7 @@ ALTER TABLE `user_token`
 -- Constraints for table `aspirasi`
 --
 ALTER TABLE `aspirasi`
-  ADD CONSTRAINT `fk_user_Aspirasi` FOREIGN KEY (`id_user`) REFERENCES `konsumen` (`id`);
-
---
--- Constraints for table `konsumen`
---
-ALTER TABLE `konsumen`
-  ADD CONSTRAINT `fk_lembaga` FOREIGN KEY (`lembaga`) REFERENCES `lembaga` (`id`);
+  ADD CONSTRAINT `fk_user_Aspirasi` FOREIGN KEY (`id_user`) REFERENCES `konsumen` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
